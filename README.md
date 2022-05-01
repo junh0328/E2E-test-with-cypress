@@ -52,3 +52,70 @@ counter라는 간단한 미션을 통해서 Cypress라는 E2E 도구에 익숙�
 ## 📝 License
 
 This project is [MIT](https://github.com/blackcoffee-study/js-counter-test/blob/main/LICENSE) licensed.
+
+## [🔥 Get Start](https://docs.cypress.io/guides/getting-started/installing-cypress#Continuous-integration)
+
+## 실행 방법
+
+### 1. cypress 설치
+
+```
+$ npm install cypress --save-dev / yarn add cypress --dev
+```
+
+### 2. cypress 실행
+
+```
+$ ./node_modules/.bin/cypress open
+```
+
+### 3. cypress 디렉토리 생성확인
+
+정상적으로 cypress가 실행된 경우, 우리의 레포지토리 내부에도 cypress 폴더가 생긴 것을 알 수 있다.
+
+해당 폴더 내부에 `cypress/integration/1-getting-started/todo.spec.js` 경로를 통해 첫 번째 todo list 관련 테스트 코드가 작성되어 있음을 알 수 있다.
+
+### 4. 작성하기
+
+파일의 이름이 `xxx.spec.js` 인 이유는 해당 파일의 사양(= specification) 을 나타내기 때문이다.
+
+### 5. 확인하기
+
+<details>
+
+<summary>최초 실행</summary>
+
+<details>
+<summary>최초 실행 코드</summary>
+
+```js
+describe("example counter app", () => {
+  beforeEach(() => {
+    cy.visit("http://127.0.0.1:5500/index.html");
+  });
+
+  it("최초의 카운터 값을 0으로 보여준다", () => {
+    cy.get("#value").invoke("text").should("eq", "0");
+  });
+});
+
+// describe: 어떤 어플리케이션인지 기술하는 부분
+// beforeEach : 하나의 테스트 코드를 실행시키기 전에 매번 실행해주는 함수
+// it : 테스트코드 작성
+
+/** 메서드
+ * visit : 방문할 주소의 url
+ * get : 가져올 element node (querySelector)
+ * invoke : 가져올 값
+ * should : 가져올 값의 조건
+ */
+```
+
+</details>
+
+<br/>
+<img  src="images/cy1.PNG" alt="cy_1"/>
+
+</details>
+
+## cypress 내부 메서드
